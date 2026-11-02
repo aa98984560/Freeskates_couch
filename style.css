@@ -1,0 +1,259 @@
+/* 整個網站 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+body {
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+    background-color: white;
+    color: #1e293b;
+    margin: 0 ;
+}
+
+/* 網站導覽列 */
+
+nav {
+    background-color: #eeeeee;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+/* 導覽列的連結 */
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* 首頁 */
+
+#home {
+    background-color:white;
+    text-align: center;
+    padding: 40px;
+    
+}
+
+#home p
+    {
+        font-size: 28px;
+    }
+
+
+ /* 飄移板介紹 */
+
+#freeskates{
+    text-align: center;
+}
+
+/* 個人介紹 */
+
+#about{
+    text-align: center;
+}
+
+#about img{
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#about p {
+    max-width: 600px;
+    width: 100%;
+    margin: 24px auto 0;
+}
+
+/* 課程介紹 */
+/* 課程卡片 */
+
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.course-card:last-child:nth-child(odd){
+    grid-column: 1 / -1;
+}
+
+.course-card {
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 0px;
+    border-left: 5px solid orange;
+}
+
+/* 課程價格 */
+
+#price{
+    text-align: center;
+}
+/* Q&A */
+
+/* 聯絡我 */
+
+
+/* 大標題 */
+
+h1 {
+    font-size: 40px;
+    color: #000000;
+}
+
+/* 二級標題 */
+
+h2 {
+    font-size: 28px;
+    color: #000000;
+}
+
+/* 段落 */
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+section {
+    padding: 20px 20px;
+    margin-bottom: 20px;
+}
+
+
+
+/* 圖片 */
+
+img {
+
+    max-width: 100%;
+    height: auto;
+    
+}
+
+/* 頁尾 */
+
+footer {
+    background-color: #d1d1d1;
+    color: #1e293b;
+    padding: 24px;
+    text-align: center;
+}
+
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 0 0px;
+    }
+
+    section {
+        padding: 12px 0px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #freeskates h2{
+        font-size: 24px;
+        text-align: center;
+    }
+    #freeskates p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #about h2{
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #about p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #courses h2{
+        font-size: 24px;
+        text-align: center;
+    }
+    #courses p{
+        font-size: 16px;
+    }
+
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card:last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #price h2{
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #faq h2{
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #faq p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 26px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+
+}
