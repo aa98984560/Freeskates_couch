@@ -1,34 +1,28 @@
 /* 整個網站 */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-main {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0px 20px;
-}
 
 body {
     font-family: Arial, "Microsoft JhengHei", sans-serif;
     background-color: white;
     color: #1e293b;
-    margin: 0 ;
+    
 }
 
 /* 網站導覽列 */
 
 nav {
-    background-color: #eeeeee;
-    padding: 20px;
+    background-color: #f3ecd7;
+    padding: 25px 40px 25px;
 
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 22px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
@@ -37,57 +31,140 @@ nav {
 nav a {
     color: black;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 /* 首頁 */
 
 #home {
-    background-color:white;
+    background-color: white;
     text-align: center;
-    padding: 40px;
+    padding: 0px 0px 0px;
+    margin: 0 0px;
+}
+
+.hero{ 
+    position: relative;
+    height: 100%;
+}
+
+
+.hero-text {
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: white;
+}
+
+.hero-text h1 {
+    color: #f3ecd7;
+    font-size: 56px;
+}
+
+.hero-text p {
+    color: #e4d45f;
+    font-size: 32px;
+    margin-top: 0px;
+}
+
+.hero-images img{
     
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.45);
 }
 
-#home p
-    {
-        font-size: 28px;
-    }
+.hero-images {
+    
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0px;
+    width: 100%;
 
-
- /* 飄移板介紹 */
-
-#freeskates{
-    text-align: center;
 }
+
+
+
 
 /* 個人介紹 */
 
 #about{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 60px 24px;
 }
 
-#about img{
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+.introduceMe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    width:100%;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
-#about p {
-    max-width: 600px;
+.introduceMe-image {
+    flex: 0 0 45%;
+}
+
+.introduceMe-image img {
+    display: block;
     width: 100%;
-    margin: 24px auto 0;
+    height: auto;
+    border-radius: 25px;
+    border:3px solid #dee9ff;
+}
+
+.introduceMe-text {
+    flex:1;
+    min-width: 0;
+    text-align: left;
+}
+.introduceMe-text h2{
+    
+    color: rgb(10, 10, 10);
+    font-size:48px;
+    margin: 0 0 24px;
+}
+.introduceMe-text h3{
+    
+    color: rgb(10, 10, 10);
+    font-size:36px;
+    margin: 0 0 24px;
+}
+.introduceMe-text p {
+    color: rgb(10, 10, 10);
+    font-size: 28px;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
 }
 
 /* 課程介紹 */
 /* 課程卡片 */
 
 
+#courses h2{
+    text-align: center;
+}
+
 .course-list {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 20px;
+    padding: 0px 300px;
 }
 
 .course-card:last-child:nth-child(odd){
@@ -95,9 +172,11 @@ nav a {
 }
 
 .course-card {
-    background-color: rgb(240, 240, 240);
-    padding: 20px;
-    border-radius: 16px;
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    border:1px solid #e5e7eb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     margin-bottom: 0px;
     border-left: 5px solid orange;
 }
@@ -111,32 +190,6 @@ nav a {
 
 /* 聯絡我 */
 
-
-/* 大標題 */
-
-h1 {
-    font-size: 40px;
-    color: #000000;
-}
-
-/* 二級標題 */
-
-h2 {
-    font-size: 28px;
-    color: #000000;
-}
-
-/* 段落 */
-
-p {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-section {
-    padding: 20px 20px;
-    margin-bottom: 20px;
-}
 
 
 
