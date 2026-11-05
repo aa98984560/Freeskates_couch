@@ -4,9 +4,16 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url("./fonts/NotoSansTC-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 1000;
+    font-display: swap;
+}
+
 
 body {
-    font-family: Arial, "Microsoft JhengHei", sans-serif;
+    font-family: "Noto Sans TC",Arial, "Microsoft JhengHei", sans-serif;
     background-color: white;
     color: #1e293b;
     
@@ -15,7 +22,7 @@ body {
 /* 網站導覽列 */
 
 nav {
-    background-color: #f3ecd7;
+    background-color: #FCFBF7;
     padding: 25px 40px 25px;
 
     display: flex;
@@ -24,6 +31,7 @@ nav {
     align-items: center;
     gap: 60px;
     flex-wrap: wrap;
+    
 }
 
 /* 導覽列的連結 */
@@ -32,6 +40,7 @@ nav a {
     color: black;
     text-decoration: none;
     font-size: 20px;
+    font-weight: 450;
 }
 
 nav a:hover {
@@ -68,12 +77,14 @@ nav a:hover {
 .hero-text h1 {
     color: #f3ecd7;
     font-size: 56px;
+    font-weight: 750;
 }
 
 .hero-text p {
     color: #e4d45f;
     font-size: 32px;
     margin-top: 0px;
+    font-weight: 650;
 }
 
 .hero-images img{
@@ -131,18 +142,22 @@ nav a:hover {
     flex:1;
     min-width: 0;
     text-align: left;
+    
 }
+
 .introduceMe-text h2{
     
     color: rgb(10, 10, 10);
     font-size:48px;
     margin: 0 0 24px;
+    font-weight: 700;
 }
 .introduceMe-text h3{
     
     color: rgb(10, 10, 10);
     font-size:36px;
     margin: 0 0 24px;
+    font-weight: 600;
 }
 .introduceMe-text p {
     color: rgb(10, 10, 10);
@@ -150,57 +165,232 @@ nav a:hover {
     line-height: 2;
     margin: 0;
     padding: 0;
+    font-weight: 500;
 }
 
 /* 課程介紹 */
 /* 課程卡片 */
 
-
-#courses h2{
-    text-align: center;
+#courses{
+    background-color:#FCFBF7;
+    display: flex;
+    align-items: center;
+    padding: 60px 24px;
 }
 
-.course-list {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-    padding: 0px 300px;
+.courses-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    width:100%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
-.course-card:last-child:nth-child(odd){
-    grid-column: 1 / -1;
+.courses-images {
+    flex: 0 1 45%;
 }
 
-.course-card {
-    background-color: #ffffff;
-    padding: 32px;
-    border-radius: 20px;
-    border:1px solid #e5e7eb;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    margin-bottom: 0px;
-    border-left: 5px solid orange;
+.courses-images img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border:5px solid #dde9e9;
+}
+
+.courses-text {
+    flex:1;
+    min-width: 0;
+    text-align: left;
+}
+
+.courses-text h2{
+    
+    color: #397e78;
+    font-size:48px;
+    margin: 0 0 24px;
+    font-weight: 700;
+}
+.courses-text h3{
+    
+    color: rgb(10, 10, 10);
+    font-size:36px;
+    margin: 0 0 24px;
+    font-weight: 600;
+}
+.courses-text p {
+    color: rgb(10, 10, 10);
+    font-size: 28px;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
 }
 
 /* 課程價格 */
 
 #price{
-    text-align: center;
+    background-color:#FCFBF7;
+    display: flex;
+    align-items: center;
+    padding: 60px 24px;
 }
+
+.price-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    width:100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.price-images {
+    flex: 0 1 45%;
+}
+
+.price-images img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border:5px solid #dde9e9;
+}
+
+.price-text {
+    flex:1;
+    min-width: 0;
+    text-align: left;
+}
+
+.price-text h2{
+    
+    color: #397e78;
+    font-size:48px;
+    margin: 0 0 24px;
+    font-weight: 700;
+}
+.price-text h3{
+    
+    color: rgb(10, 10, 10);
+    font-size:36px;
+    margin: 0 0 24px;
+    font-weight: 600;
+}
+.price-text p {
+    color: rgb(10, 10, 10);
+    font-size: 28px;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.booking-btn {
+    display: inline-block;
+
+    background-color: #408a87;
+    color: white;
+
+    padding: 28px 44px;
+    border-radius: 10px;
+
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+
+    margin-top: 32px;
+
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.booking-btn:hover {
+    background-color: #2d6663;
+    transform: translateY(-3px);
+}
+
 /* Q&A */
+
+#faq{
+    background-color: white;
+    padding: 100px 24px;
+}
+
+.faq-container{
+    max-width: 1600px;
+    margin:0 auto;
+}
+
+#faq h2{
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+#faq details {
+    background-color: #fffffd;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    padding: 28px 24px;
+    font-size:16px;
+}
+
+/* 問題 */
+#faq summary {
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    font-weight: 700;
+}
+
+/* 移除 Chrome / Safari 預設三角形 */
+#faq summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 自訂 + 符號 */
+#faq summary::after {
+    content: "+";
+    color: #408a87;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+/* 展開時改成 - */
+#faq details[open] summary::after {
+    content: "−";
+}
+
+/* 答案 */
+#faq details p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #000000;
+    margin-top: 16px;
+    font-weight: 500;
+}
+
+/* 展開時的外框 */
+#faq details[open] {
+    border-color: #b7d8d4;
+}
 
 /* 聯絡我 */
 
 
 
 
-/* 圖片 */
-
-img {
-
-    max-width: 100%;
-    height: auto;
-    
-}
 
 /* 頁尾 */
 
@@ -209,6 +399,7 @@ footer {
     color: #1e293b;
     padding: 24px;
     text-align: center;
+    font-weight: 600;
 }
 
 
