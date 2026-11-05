@@ -472,6 +472,12 @@ footer {
 footer a {
     color: inherit;
     overflow-wrap: anywhere;
+    text-decoration: none;
+    transition:0.2s;
+}
+
+footer a:hover{
+    color:#99956c;
 }
 
 /* ========================================
