@@ -1,311 +1,173 @@
-/* 整個網站 */
-*{
+
+/* ========================================
+   1. 全站基礎設定
+======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
     margin: 0;
     padding: 0;
 }
 
 @font-face {
     font-family: "Noto Sans TC";
-    src: url("./fonts/NotoSansTC-VariableFont_wght.ttf") format("truetype");
-    font-weight: 100 1000;
+    src: url("./fonts/NotoSansTC-VariableFont_wght.ttf")
+         format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
     font-display: swap;
 }
 
-
-body {
-    font-family: "Noto Sans TC",Arial, "Microsoft JhengHei", sans-serif;
-    background-color: white;
-    color: #1e293b;
-    
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
 }
 
-/* 網站導覽列 */
+body {
+    font-family: "Noto Sans TC", Arial,
+                 "Microsoft JhengHei", sans-serif;
+    background-color: white;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+    outline: 3px solid #397e78;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   2. 導覽列
+======================================== */
 
 nav {
     background-color: #FCFBF7;
-    padding: 25px 40px 25px;
+    padding: 20px clamp(16px, 3vw, 40px);
 
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 60px;
     flex-wrap: wrap;
-    
-}
 
-/* 導覽列的連結 */
+    column-gap: clamp(16px, 2.5vw, 48px);
+    row-gap: 12px;
+}
 
 nav a {
     color: black;
     text-decoration: none;
-    font-size: 20px;
+    font-size: clamp(14px, 1.1vw, 18px);
     font-weight: 450;
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #397e78;
 }
 
-/* 首頁 */
+/* ========================================
+   3. 首頁 Hero
+======================================== */
 
 #home {
     background-color: white;
     text-align: center;
-    padding: 0px 0px 0px;
-    margin: 0 0px;
 }
 
-.hero{ 
+.hero {
     position: relative;
-    height: 100%;
+    height: min(780px, 85svh);
+    min-height: 500px;
+    overflow: hidden;
 }
 
+.hero-images {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    height: 100%;
+    width: 100%;
+}
+
+.hero-images img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    filter: brightness(0.45);
+}
 
 .hero-text {
     position: absolute;
     z-index: 1;
-    top: 80%;
-    left: 50%;
 
+    top: 76%;
+    left: 50%;
     transform: translate(-50%, -50%);
 
+    width: min(92%, 1000px);
     text-align: center;
     color: white;
 }
 
 .hero-text h1 {
     color: #f3ecd7;
-    font-size: 56px;
+    font-size: clamp(28px, 3.5vw, 56px);
     font-weight: 750;
+    line-height: 1.3;
+    text-wrap: balance;
 }
 
 .hero-text p {
     color: #e4d45f;
-    font-size: 32px;
-    margin-top: 0px;
+    font-size: clamp(17px, 2vw, 30px);
     font-weight: 650;
+    line-height: 1.5;
+    margin-top: 8px;
 }
 
-.hero-images img{
-    
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.45);
-}
-
-.hero-images {
-    
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0px;
-    width: 100%;
-
-}
-
-
-
-
-/* 個人介紹 */
-
-#about{
-    display: flex;
-    align-items: center;
-    padding: 60px 24px;
-}
-
-.introduceMe {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 45px;
-    width:100%;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.introduceMe-image {
-    flex: 0 0 45%;
-}
-
-.introduceMe-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 25px;
-    border:3px solid #dee9ff;
-}
-
-.introduceMe-text {
-    flex:1;
-    min-width: 0;
-    text-align: left;
-    
-}
-
-.introduceMe-text h2{
-    
-    color: rgb(10, 10, 10);
-    font-size:48px;
-    margin: 0 0 24px;
-    font-weight: 700;
-}
-.introduceMe-text h3{
-    
-    color: rgb(10, 10, 10);
-    font-size:36px;
-    margin: 0 0 24px;
-    font-weight: 600;
-}
-.introduceMe-text p {
-    color: rgb(10, 10, 10);
-    font-size: 28px;
-    line-height: 2;
-    margin: 0;
-    padding: 0;
-    font-weight: 500;
-}
-
-/* 課程介紹 */
-/* 課程卡片 */
-
-#courses{
-    background-color:#FCFBF7;
-    display: flex;
-    align-items: center;
-    padding: 60px 24px;
-}
-
-.courses-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 45px;
-    width:100%;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.courses-images {
-    flex: 0 1 45%;
-}
-
-.courses-images img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 25px;
-    border:5px solid #dde9e9;
-}
-
-.courses-text {
-    flex:1;
-    min-width: 0;
-    text-align: left;
-}
-
-.courses-text h2{
-    
-    color: #397e78;
-    font-size:48px;
-    margin: 0 0 24px;
-    font-weight: 700;
-}
-.courses-text h3{
-    
-    color: rgb(10, 10, 10);
-    font-size:36px;
-    margin: 0 0 24px;
-    font-weight: 600;
-}
-.courses-text p {
-    color: rgb(10, 10, 10);
-    font-size: 28px;
-    line-height: 2;
-    margin: 0;
-    padding: 0;
-    font-weight: 500;
-}
-
-/* 課程價格 */
-
-#price{
-    background-color:#FCFBF7;
-    display: flex;
-    align-items: center;
-    padding: 60px 24px;
-}
-
-.price-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 45px;
-    width:100%;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.price-images {
-    flex: 0 1 45%;
-}
-
-.price-images img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 25px;
-    border:5px solid #dde9e9;
-}
-
-.price-text {
-    flex:1;
-    min-width: 0;
-    text-align: left;
-}
-
-.price-text h2{
-    
-    color: #397e78;
-    font-size:48px;
-    margin: 0 0 24px;
-    font-weight: 700;
-}
-.price-text h3{
-    
-    color: rgb(10, 10, 10);
-    font-size:36px;
-    margin: 0 0 24px;
-    font-weight: 600;
-}
-.price-text p {
-    color: rgb(10, 10, 10);
-    font-size: 28px;
-    line-height: 2;
-    margin: 0;
-    padding: 0;
-    font-weight: 500;
-}
+/* ========================================
+   4. 共用預約按鈕
+======================================== */
 
 .booking-btn {
     display: inline-block;
 
     background-color: #408a87;
     color: white;
+    border: 2px solid transparent;
 
-    padding: 28px 44px;
+    padding: 16px 32px;
     border-radius: 10px;
 
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-
-    margin-top: 32px;
-
-    transition: 0.3s;
+    font-size: clamp(16px, 1.2vw, 20px);
     font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    text-align: center;
+
+    margin-top: 28px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .booking-btn:hover {
@@ -313,191 +175,671 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* Q&A */
+/* 首頁使用透明米白色按鈕 */
+.hero .booking-btn {
+    background-color: transparent;
+    color: #f3ecd7;
+    border-color: #f3ecd7;
+}
 
-#faq{
+.hero .booking-btn:hover {
+    background-color: #f3ecd7;
+    color: #252525;
+}
+
+/* ========================================
+   5. 個人介紹
+======================================== */
+
+#about {
+    display: flex;
+    align-items: center;
+    padding: 80px 24px;
+    background-color: white;
+}
+
+.introduceMe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(24px, 3vw, 56px);
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.introduceMe-image {
+    flex: 0 1 45%;
+    min-width: 0;
+}
+
+.introduceMe-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border: 3px solid #dee9ff;
+}
+
+.introduceMe-text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.introduceMe-text h2 {
+    color: #0a0a0a;
+    font-size: clamp(30px, 3vw, 48px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.introduceMe-text h3 {
+    color: #0a0a0a;
+    font-size: clamp(23px, 2.2vw, 36px);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}
+
+.introduceMe-text p {
+    color: #0a0a0a;
+    font-size: clamp(17px, 1.4vw, 24px);
+    font-weight: 400;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   6. 課程介紹
+======================================== */
+
+#courses {
+    background-color: #FCFBF7;
+    display: flex;
+    align-items: center;
+    padding: 80px 24px;
+}
+
+.courses-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(24px, 3vw, 56px);
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.courses-images {
+    flex: 0 1 45%;
+    min-width: 0;
+}
+
+.courses-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border: 5px solid #dde9e9;
+}
+
+.courses-text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.courses-text h2 {
+    color: #397e78;
+    font-size: clamp(30px, 3vw, 48px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.courses-text h3 {
+    color: #0a0a0a;
+    font-size: clamp(23px, 2.2vw, 36px);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}
+
+.courses-text p {
+    color: #0a0a0a;
+    font-size: clamp(17px, 1.4vw, 24px);
+    font-weight: 400;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   7. 課程價格
+======================================== */
+
+#price {
+    background-color: #FCFBF7;
+    display: flex;
+    align-items: center;
+    padding: 80px 24px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(24px, 3vw, 56px);
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.price-images {
+    flex: 0 1 45%;
+    min-width: 0;
+}
+
+.price-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border: 5px solid #dde9e9;
+}
+
+.price-text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.price-text h2 {
+    color: #397e78;
+    font-size: clamp(30px, 3vw, 48px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.price-text h3 {
+    color: #0a0a0a;
+    font-size: clamp(23px, 2.2vw, 36px);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 24px;
+}
+
+.price-text p {
+    color: #0a0a0a;
+    font-size: clamp(17px, 1.4vw, 24px);
+    font-weight: 400;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   8. FAQ
+======================================== */
+
+#faq {
     background-color: white;
     padding: 100px 24px;
 }
 
-.faq-container{
-    max-width: 1600px;
-    margin:0 auto;
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-#faq h2{
-    font-size: 48px;
+#faq h2 {
+    font-size: clamp(30px, 3vw, 48px);
     text-align: center;
-    margin-bottom: 16px;
     font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 36px;
 }
 
 #faq details {
     background-color: #fffffd;
     border: 1px solid #e5e5e5;
-    border-radius: 20px;
-    margin-bottom: 24px;
-    padding: 28px 24px;
-    font-size:16px;
+    border-radius: 16px;
+
+    margin-bottom: 16px;
+    padding: 22px 24px;
+
+    transition: border-color 0.2s ease;
 }
 
-/* 問題 */
 #faq summary {
-    font-size: 22px;
-    font-weight: 600;
-    cursor: pointer;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
+
+    font-size: clamp(17px, 1.3vw, 22px);
+    font-weight: 600;
+    line-height: 1.6;
+    cursor: pointer;
     list-style: none;
-    font-weight: 700;
 }
 
-/* 移除 Chrome / Safari 預設三角形 */
 #faq summary::-webkit-details-marker {
     display: none;
 }
 
-/* 自訂 + 符號 */
 #faq summary::after {
     content: "+";
     color: #408a87;
     font-size: 28px;
     font-weight: 400;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
-/* 展開時改成 - */
 #faq details[open] summary::after {
     content: "−";
 }
 
-/* 答案 */
 #faq details p {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #000000;
+    font-size: clamp(16px, 1.2vw, 19px);
+    line-height: 1.9;
+    color: #333333;
+    font-weight: 400;
     margin-top: 16px;
-    font-weight: 500;
+    overflow-wrap: anywhere;
 }
 
-/* 展開時的外框 */
 #faq details[open] {
     border-color: #b7d8d4;
 }
 
-/* 聯絡我 */
-
-
-
-
-
-/* 頁尾 */
+/* ========================================
+   9. 頁尾
+======================================== */
 
 footer {
     background-color: #d1d1d1;
     color: #1e293b;
-    padding: 24px;
+    padding: 32px 20px;
     text-align: center;
     font-weight: 600;
+    font-size: 16px;
 }
 
-
-@media (max-width: 600px) {
-
-    main {
-        padding: 0 0px;
-    }
-
-    section {
-        padding: 12px 0px;
-    }
-
+footer a {
+    color: inherit;
+    overflow-wrap: anywhere;
 }
 
-@media (max-width: 600px) {
+/* ========================================
+   10. 平板版：1024px 以下
+======================================== */
+
+@media (max-width: 1024px) {
 
     nav {
         justify-content: center;
-        gap: 12px;
-        padding: 12px;
+        padding: 18px 20px;
+        column-gap: 24px;
+    }
+
+    .hero {
+        height: 70svh;
+        min-height: 460px;
+    }
+
+    .hero-text {
+        top: 74%;
+    }
+
+    #about,
+    #courses,
+    #price {
+        padding: 64px 24px;
+    }
+
+    .introduceMe,
+    .courses-container,
+    .price-container {
+        gap: 28px;
+    }
+
+    .introduceMe-image,
+    .courses-images,
+    .price-images {
+        flex-basis: 45%;
+    }
+
+    .introduceMe-text h2,
+    .courses-text h2,
+    .price-text h2 {
+        margin-bottom: 16px;
+    }
+
+    .introduceMe-text h3,
+    .courses-text h3,
+    .price-text h3 {
+        margin-bottom: 16px;
+    }
+
+    .introduceMe-text p,
+    .courses-text p,
+    .price-text p {
+        line-height: 1.8;
+    }
+
+    #faq {
+        padding: 80px 24px;
+    }
+}
+
+/* ========================================
+   11. 手機版：768px 以下
+======================================== */
+
+@media (max-width: 768px) {
+    /* 導覽列 */
+
+    nav {
+        justify-content: center;
+        padding: 14px 12px;
+        column-gap: 18px;
+        row-gap: 10px;
     }
 
     nav a {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    #freeskates h2{
-        font-size: 24px;
-        text-align: center;
-    }
-    #freeskates p{
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    #about h2{
-        font-size: 24px;
-        text-align: center;
+        font-size: 14px;
     }
 
-    #about p{
-        font-size: 16px;
-    }
-}
+    /* 首頁 */
 
-@media (max-width: 600px) {
-
-    #courses h2{
-        font-size: 24px;
-        text-align: center;
-    }
-    #courses p{
-        font-size: 16px;
+    .hero {
+        height: 75svh;
+        min-height: 480px;
+        max-height: 760px;
     }
 
-    .course-list {
+    .hero-images {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-columns: 1fr;
     }
 
-    .course-card:last-child:nth-child(odd) {
-        grid-column: auto;
-    }
-}
-
-@media (max-width: 600px) {
-
-    #price h2{
-        font-size: 24px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 600px) {
-
-    #faq h2{
-        font-size: 24px;
-        text-align: center;
+    .hero-images img {
+        object-position: center;
+        display: none;
     }
 
-    #faq p{
+    .hero-images img:first-child {
+        display: block;
+    }
+
+    .hero-text {
+        width: 92%;
+        top: 72%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(24px, 5.5vw, 40px);
+        line-height: 1.35;
+    }
+
+    .hero-text p {
+        font-size: clamp(14px, 3.5vw, 22px);
+        margin-top: 10px;
+    }
+
+    .hero .booking-btn {
+        margin-top: 22px;
+        padding: 13px 24px;
         font-size: 16px;
     }
+
+    /* 三個主要介紹區塊 */
+
+    #about,
+    #courses,
+    #price {
+        padding: 26px 20px;
+    }
+
+    .introduceMe,
+    .courses-container,
+    .price-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+    }
+
+    .introduceMe-image,
+    .courses-images,
+    .price-images {
+        flex: none;
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .introduceMe-text,
+    .courses-text,
+    .price-text {
+        width: 100%;
+    }
+    @media (max-width: 768px) {
+        .introduceMe {
+            flex-direction: column;
+        }
+
+        .introduceMe-text {
+            order: 1;
+        }
+
+        .introduceMe-image {
+            order: 2;
+        }
+    }
+    /* 手機版讓課程介紹先顯示文字 */
+    .courses-text {
+        order: 1;
+    }
+
+    .courses-images {
+        order: 2;
+    }
+
+    /* 個人介紹與價目表維持 HTML 順序 */
+
+    .introduceMe-text h2,
+    .courses-text h2
+    
+     {
+        font-size: clamp(22px, 5vw, 34px);
+        margin-bottom: 16px;
+    }
+    .price-text{
+        order:1;
+    }
+    .price-images{
+        order:2;
+    }
+
+    .price-text h2{
+        font-size: clamp(20px, 5vw, 34px);
+        margin-bottom: 16px;
+    }
+    .price-text h3 {
+        font-size: clamp(16px, 4vw, 27px);
+        margin-bottom: 16px;
+    }
+
+    .introduceMe-text h3,
+    .courses-text h3
+     {
+        font-size: clamp(16px, 4vw, 27px);
+        margin-bottom: 16px;
+    }
+
+    .introduceMe-text p,
+    .courses-text p,
+    .price-text p {
+        font-size: clamp(12px, 5vw, 16px);
+        line-height: 1.85;
+    }
+
+    .introduceMe-image img,
+    .courses-images img,
+    .price-images img {
+        border-radius: 18px;
+    }
+
+    /* 價目表預約按鈕 */
+
+    .price-text .booking-btn {
+        display: block;
+        width: 100%;
+        max-width: 520px;
+        padding: 16px 20px;
+        margin-top: 24px;
+    }
+
+    /* FAQ */
+
+    #faq {
+        padding: 26px 20px;
+    }
+
+    #faq h2 {
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
+
+    #faq details {
+        padding: 18px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    #faq summary {
+        font-size: 17px;
+        gap: 12px;
+    }
+
+    #faq details p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    /* 頁尾 */
+
+    footer {
+        padding: 28px 16px;
+        font-size: 14px;
+    }
 }
 
-@media (max-width: 600px) {
+/* ========================================
+   12. 小手機：480px 以下
+======================================== */
 
-    h1 {
-        font-size: 26px;
+@media (max-width: 480px) {
+
+    nav {
+        column-gap: 14px;
+        row-gap: 8px;
     }
 
-    #home p {
-        font-size: 18px;
+    nav a {
+        font-size: 13px;
     }
 
+    .hero {
+        height: 72svh;
+        min-height: 460px;
+    }
+
+    .hero-text {
+        top: 70%;
+        width: 94%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(25px, 7vw, 32px);
+    }
+
+    .hero-text p {
+        font-size: clamp(16px, 4vw, 19px);
+    }
+
+    .hero .booking-btn {
+        padding: 12px 22px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    #about,
+    #courses,
+    #price
+     {
+        padding: 20px 16px;
+    }
+
+    .introduceMe,
+    .courses-container,
+    .price-container {
+        gap: 24px;
+    }
+
+    .introduceMe-text p,
+    .courses-text p,
+    .price-text p {
+        font-size: clamp(12px, 3vw, 16px);
+    }
+
+    .introduceMe-image img,
+    .courses-images img,
+    .price-images img {
+        border-radius: 14px;
+    }
+
+    #faq {
+        padding: 20px 16px;
+    }
+
+    #faq h2 {
+        font-size: 30px;
+    }
+
+    #faq details {
+        padding: 16px;
+    }
+
+    #faq summary {
+        font-size: 16px;
+    }
+
+    #faq summary::after {
+        font-size: 24px;
+    }
+}
+
+/* ========================================
+   13. 尊重減少動畫偏好
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .booking-btn,
+    nav a,
+    #faq details {
+        transition: none;
+    }
+
+    .booking-btn:hover {
+        transform: none;
+    }
 }
