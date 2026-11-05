@@ -626,18 +626,16 @@ footer a {
     .price-text {
         width: 100%;
     }
-    @media (max-width: 768px) {
-        .introduceMe {
-            flex-direction: column;
-        }
+    .introduceMe {
+        flex-direction: column;
+    }
 
-        .introduceMe-text {
-            order: 1;
-        }
+    .introduceMe-text {
+        order: 1;
+    }
 
-        .introduceMe-image {
-            order: 2;
-        }
+    .introduceMe-image {
+        order: 2;
     }
     /* 手機版讓課程介紹先顯示文字 */
     .courses-text {
@@ -793,7 +791,7 @@ footer a {
     .introduceMe-text p,
     .courses-text p,
     .price-text p {
-        font-size: clamp(12px, 3vw, 16px);
+        font-size: clamp(14px, 3vw, 16px);
     }
 
     .introduceMe-image img,
